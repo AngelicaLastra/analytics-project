@@ -10,8 +10,6 @@ renamed as (
         -- ids
         station_id,
 
-        -- strings
-
         -- numerics
         num_bikes_available as number_bikes_available,
         num_bikes_disabled as number_bikes_disabled,
@@ -25,7 +23,7 @@ renamed as (
         is_returning as is_accepting_bike_returns,
 
         -- timestamps
-        last_reported as last_reported_status_at
+        timestamp_seconds(last_reported) as last_reported_status_at
         
     from source
 )
