@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+    - name: san_francisco_bike_share
+      database: bigquery-public-data
+      schema: san_francisco_bikeshare
+      tables:
+        - name: bikeshare_regions
+        - name: bikeshare_station_info
+        - name: bikeshare_station_status
+        - name: bikeshare_trips
