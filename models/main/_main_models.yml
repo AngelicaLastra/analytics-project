@@ -1,0 +1,70 @@
+version: 2
+
+models:
+  - name: stations
+    description: "Contains information on all the stations in San Francisco and their most recent status metrics"
+    columns:
+        - name: station_id
+          description: "ID for the stations"
+          tests: 
+            - not_null
+            - unique 
+        - name: station_name
+          description: "Name of the station" 
+        - name: region_name
+          description: "Name of region station is in"
+        - name: number_bikes_available
+          description: "Number of bikes available for rental"
+        - name: number_bikes_disabled
+          description: "Number of disabled bikes at the station" 
+        - name: number_ebikes_available
+          description: Number of ebikes available for rental
+        - name: number_docks_available
+          description: "Number of docks accepting bike returns"
+        - name: number_docks_disabled
+          description: "Number of empty but disabled dock points at the station"
+        - name: station_docking_capacity
+          description: "Number of total docking points installed at this station, both available and unavailable"
+        - name: is_operational
+          description: "is the station currently on the street"
+        - name: is_renting_bikes
+          description: "is the station currently renting bikes "
+        - name: is_accepting_bike_returns
+          description: "is the station accepting bike returns"
+        - name: has_kiosk
+          description: "If the station has a kiosk"
+        - name: has_credit_card_payment_enabled
+          description: "Accepts credit card payments"
+        - name: has_key_fob_payment_enabled
+          description: "Accepts key fob payments"
+        - name: has_high_disabled_bike_rate
+          description: "Has more than 50% of bikes disabled"
+        - name: last_reported_status_at
+          description: "Timestamp indicating the last time this station reported its status"
+
+  - name: trips
+    description: "Contains information on all the trips taken in San Francisco"
+    columns:
+        - name: trip_id
+          description: "ID for the trips"
+          tests: 
+            - not_null
+            - unique 
+        - name: start_station_id
+          description: "ID for start station" 
+        - name: end_station_id
+          description: "ID for end station" 
+        - name: bike_id
+          description: "ID of bike used" 
+        - name: start_station_name
+          description: "Station name of start station" 
+        - name: end_station_name
+          description: "Station name of end station" 
+        - name: subscriber_type
+          description: "Type of subcriber of renting user" 
+        - name: trip_duration_seconds
+          description: "Time of trip in seconds" 
+        - name: trip_started_at
+          description: "Timestamp indicating when the trip started" 
+        - name: trip_ended_at
+          description: "Timestamp indicating when the trip ended"
